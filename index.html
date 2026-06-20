@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Dinner Gathering - Invitation</title>
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Canvas for Sparkles -->
+    <canvas id="sparkle-canvas"></canvas>
+
+    <!-- Animated Ambient Lights -->
+    <div class="ambient-light blob-1"></div>
+    <div class="ambient-light blob-2"></div>
+    <div class="ambient-light blob-3"></div>
+
+    <div class="app-container">
+        <!-- Audio Background Toggle -->
+        <div class="audio-controller">
+            <button id="music-toggle" aria-label="Toggle Music" class="music-btn">
+                <svg class="icon-play" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M8 5v14l11-7z"/>
+                </svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" style="display:none;">
+                    <path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                </svg>
+                <span class="music-text">Play Soft Chime</span>
+            </button>
+            <audio id="bg-music" loop src="https://assets.mixkit.co/active_storage/sfx/2869/2869-128.wav"></audio>
+        </div>
+
+        <!-- Hero Section -->
+        <header class="hero-section">
+            <div class="luxury-badge">Family Dinner Gathering</div>
+            <h1 class="main-title">A Special Evening Together</h1>
+            <p class="subtitle">Join us tonight for a warm family gathering and a delicious feast.</p>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main class="content-grid">
+            
+            <!-- Left Column: Countdown & Critical Info -->
+            <section class="card time-card glassmorphism animate-fade-in">
+                <div class="card-glow"></div>
+                <h2 class="card-title">
+                    <svg class="title-icon" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8zm.5-13H11v6l5.25 3.15l.75-1.23l-4.5-2.67z"/>
+                    </svg>
+                    Counting Down
+                </h2>
+                
+                <!-- Countdown Timer -->
+                <div class="countdown-container">
+                    <div class="time-block">
+                        <span id="hours" class="time-num">00</span>
+                        <span class="time-label">Hours</span>
+                    </div>
+                    <div class="time-divider">:</div>
+                    <div class="time-block">
+                        <span id="minutes" class="time-num">00</span>
+                        <span class="time-label">Minutes</span>
+                    </div>
+                    <div class="time-divider">:</div>
+                    <div class="time-block">
+                        <span id="seconds" class="time-num">00</span>
+                        <span class="time-label">Seconds</span>
+                    </div>
+                </div>
+
+                <!-- Timing Reminder Alert -->
+                <div class="reminder-alert">
+                    <div class="alert-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                    </div>
+                    <div class="alert-content">
+                        <h3>Arrival Request</h3>
+                        <p>Everyone is requested to arrive <strong>before 8:00 PM</strong> so we can begin the evening together on time!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Column: Special Guest -->
+            <section class="card guest-card glassmorphism animate-fade-in-delayed">
+                <div class="card-glow"></div>
+                <div class="guest-image-container">
+                    <img id="guest-img" src="assets/ghani_khan.jpg" alt="Ghani Khan" class="guest-banner-img">
+                    <div class="guest-overlay"></div>
+                </div>
+                <div class="guest-details">
+                    <div class="guest-label">Guest of Honor</div>
+                    <h2 class="guest-name">Ghani Khan</h2>
+                    <p class="guest-description">We are deeply honored to have Ghani Khan join us for this special dinner. Let's make this evening unforgettable with our warmest hospitality, stories, and laughter.</p>
+                </div>
+            </section>
+
+            <!-- Bottom Left: Dinner Feasts & Celebrations (Joyful Panel) -->
+            <section class="card joy-card glassmorphism col-span-2">
+                <div class="card-glow"></div>
+                <h2 class="card-title">
+                    <svg class="title-icon" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1-1.5-1s-1.5.17-1.5 1v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/>
+                    </svg>
+                    Dinner Feasts & Celebrations
+                </h2>
+                
+                <div class="joy-split">
+                    <!-- Left: Celebration & Atmosphere -->
+                    <div class="celebration-box">
+                        <h3>Bring Joy to the Table</h3>
+                        <p class="joy-intro">Tonight is a time for smiles, warmth, and family reunion. Let's fill it with joy and celebration!</p>
+                        
+                        <div class="celebration-actions">
+                            <button id="confetti-trigger-btn" class="celebrate-btn">
+                                <span class="btn-ripple"></span>
+                                <span class="btn-text">Spread Joy! 🎉</span>
+                            </button>
+                        </div>
+
+                        <!-- Mood Music Selector -->
+                        <div class="music-selector-box">
+                            <h4>Set Dinner Atmosphere:</h4>
+                            <div class="music-options">
+                                <button class="music-option-btn active" data-track="acoustic">
+                                    <span class="track-dot"></span> Acoustic Guitar
+                                </button>
+                                <button class="music-option-btn" data-track="ambient">
+                                    <span class="track-dot"></span> Warm Ambient
+                                </button>
+                                <button class="music-option-btn" data-track="chime">
+                                    <span class="track-dot"></span> Cozy Chimes
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Menu Showdown (Yum Voting!) -->
+                    <div class="menu-box">
+                        <h3>Tonight's Special Feast</h3>
+                        <p class="menu-intro">Here is a sneak peek of the delicacies prepared. Tap your favorites to show your excitement!</p>
+                        
+                        <div class="menu-grid">
+                            <!-- Dish 1 -->
+                            <div class="menu-item-card" data-dish="rice">
+                                <div class="menu-item-info">
+                                    <span class="dish-badge">Feast Essential</span>
+                                    <h4>Rice</h4>
+                                    <p>Steamed premium long-grain aromatic rice, cooked to fluffy perfection.</p>
+                                </div>
+                                <button class="yum-vote-btn">
+                                    <span class="yum-emoji">😋</span>
+                                    <span class="vote-count" id="vote-rice">0</span> Yum!
+                                </button>
+                            </div>
+
+                            <!-- Dish 2 -->
+                            <div class="menu-item-card" data-dish="chicken">
+                                <div class="menu-item-info">
+                                    <span class="dish-badge">Special Treat</span>
+                                    <h4>Beghairata Chicken</h4>
+                                    <p>A uniquely spiced, rich, and juicy chicken delicacy loaded with traditional flavor.</p>
+                                </div>
+                                <button class="yum-vote-btn">
+                                    <span class="yum-emoji">😋</span>
+                                    <span class="vote-count" id="vote-chicken">0</span> Yum!
+                                </button>
+                            </div>
+
+                            <!-- Dish 3 -->
+                            <div class="menu-item-card" data-dish="surprise">
+                                <div class="menu-item-info">
+                                    <span class="dish-badge">Secret Delight</span>
+                                    <h4>Surprise One 🎁</h4>
+                                    <p style="font-style: italic; opacity: 0.65; letter-spacing: 0.5px;">🔒 Hidden mystery item. Revealed tonight at 8 PM!</p>
+                                </div>
+                                <button class="yum-vote-btn">
+                                    <span class="yum-emoji">🤔</span>
+                                    <span class="vote-count" id="vote-surprise">0</span> Reveal?
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bottom Right: Quick Share / Text Reminder Creator -->
+            <section class="card share-card glassmorphism">
+                <div class="card-glow"></div>
+                <h2 class="card-title">
+                    <svg class="title-icon" viewBox="0 0 24 24">
+                        <path fill="currentColor" d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81c1.66 0 3-1.34 3-3s-1.34-3-3-3s-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65c0 1.61 1.31 2.92 2.92 2.92c1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                    Reminder Share Hub
+                </h2>
+                <p class="share-desc">Customize and quickly send a reminder message to the cousins' group chat!</p>
+                
+                <div class="template-selector">
+                    <label for="message-template">Choose Theme:</label>
+                    <select id="message-template">
+                        <option value="elegant">✨ Royal & Warm Invitation</option>
+                        <option value="casual">👋 Friendly & Urgent Reminder</option>
+                        <option value="excited">🔥 Excited & Fun Get-Together</option>
+                    </select>
+                </div>
+
+                <div class="preview-box">
+                    <pre id="message-preview"></pre>
+                </div>
+
+                <div class="share-actions">
+                    <button id="copy-btn" class="share-btn secondary">
+                        <svg viewBox="0 0 24 24" class="btn-icon">
+                            <path fill="currentColor" d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                        </svg>
+                        Copy Reminder
+                    </button>
+                    <button id="whatsapp-btn" class="share-btn primary">
+                        <svg viewBox="0 0 24 24" class="btn-icon">
+                            <path fill="currentColor" d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 2.68c2.01 0 3.9 1.13 4.92 2.92c1.4 2.43.83 5.51-1.3 7.29a3.67 3.67 0 0 1-2.6 1.05H12c-.52 0-1.04-.15-1.49-.44l-.32-.19l-3.13.82l.84-3.05l-.21-.34c-.81-1.28-1.24-2.77-1.24-4.3c0-4.04 3.3-7.34 7.34-7.34m0 0z"/>
+                        </svg>
+                        Send via WhatsApp
+                    </button>
+                </div>
+            </section>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Made with ❤️ for the family dinner. See you there!</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
